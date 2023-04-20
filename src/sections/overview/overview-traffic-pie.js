@@ -21,7 +21,7 @@ const useChartOptions = (labels) => {
     chart: {
       background: "transparent",
     },
-    colors: [theme.palette.primary.main, theme.palette.success.main, theme.palette.warning.main],
+    colors: [theme.palette.secondary.main, theme.palette.info.main, theme.palette.warning.main],
     dataLabels: {
       enabled: false,
     },
@@ -76,7 +76,7 @@ const iconMap = {
   ),
 };
 
-export const OverviewTraffic = (props) => {
+export const OverviewTrafficPie = (props) => {
   const { chartSeries, labels, sx } = props;
   const chartOptions = useChartOptions(labels);
 
@@ -84,7 +84,7 @@ export const OverviewTraffic = (props) => {
     <Card sx={sx}>
       <CardHeader title="Traffic Source" />
       <CardContent>
-        <Chart height={300} options={chartOptions} series={chartSeries} type="donut" width="100%" />
+        <Chart height={300} options={chartOptions} series={chartSeries} type="pie" width="100%" />
         <Stack
           alignItems="center"
           direction="row"
@@ -120,7 +120,7 @@ export const OverviewTraffic = (props) => {
   );
 };
 
-OverviewTraffic.propTypes = {
+OverviewTrafficPie.propTypes = {
   chartSeries: PropTypes.array.isRequired,
   labels: PropTypes.array.isRequired,
   sx: PropTypes.object,

@@ -9,8 +9,11 @@ import { OverviewSalesBar } from "src/sections/overview/overview-sales-bar";
 import { OverviewTasksProgress } from "src/sections/overview/overview-tasks-progress";
 import { OverviewTotalCustomers } from "src/sections/overview/overview-total-customers";
 import { OverviewTotalProfit } from "src/sections/overview/overview-total-profit";
-import { OverviewTraffic } from "src/sections/overview/overview-traffic";
+import { OverviewTrafficDonut } from "src/sections/overview/overview-traffic-donut";
+import { OverviewTrafficPie } from "src/sections/overview/overview-traffic-pie";
 import { OverviewSalesLine } from "src/sections/overview/overview-sales-line";
+import { OverviewVideo } from "src/sections/overview/overview-video";
+import { OverviewTimeline } from "src/sections/overview/overview-timeline";
 
 const now = new Date();
 
@@ -45,6 +48,16 @@ const Page = () => (
           <Grid xs={12} sm={6} lg={3}>
             <OverviewTotalProfit sx={{ height: "100%" }} value="$15k" />
           </Grid>
+          <Grid xs={12} sm={6} lg={4}>
+            <OverviewVideo
+              description="This is a sample video."
+              title="A Video"
+              url="https://assets.codepen.io/6093409/river.mp4"
+            />
+          </Grid>
+          <Grid xs={12} lg={8}>
+            <OverviewTimeline />
+          </Grid>
           <Grid xs={12} lg={8}>
             <OverviewSalesBar
               chartSeries={[
@@ -61,15 +74,15 @@ const Page = () => (
             />
           </Grid>
           <Grid xs={12} md={6} lg={4}>
-            <OverviewTraffic
+            <OverviewTrafficDonut
               chartSeries={[63, 15, 22]}
               labels={["Desktop", "Tablet", "Phone"]}
               sx={{ height: "100%" }}
             />
           </Grid>
           <Grid xs={12} md={6} lg={4}>
-            <OverviewTraffic
-              chartSeries={[63, 15, 22]}
+            <OverviewTrafficPie
+              chartSeries={[63, 22, 15]}
               labels={["Desktop", "Tablet", "Phone"]}
               sx={{ height: "100%" }}
             />
