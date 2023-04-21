@@ -14,6 +14,7 @@ import { OverviewTrafficPie } from "src/sections/overview/overview-traffic-pie";
 import { OverviewSalesLine } from "src/sections/overview/overview-sales-line";
 import { OverviewVideo } from "src/sections/overview/overview-video";
 import { OverviewTimeline } from "src/sections/overview/overview-timeline";
+import { OverviewRecentActivities } from "src/sections/overview/overview-recent-activities";
 
 const now = new Date();
 
@@ -53,10 +54,72 @@ const Page = () => (
               description="This is a sample video."
               title="A Video"
               url="https://assets.codepen.io/6093409/river.mp4"
+              date="20 Apr 2023"
+              sx={{ height: "100%" }}
             />
           </Grid>
-          <Grid xs={12} lg={8}>
-            <OverviewTimeline />
+          <Grid xs={12} lg={4}>
+            <OverviewTimeline
+              timelineItems={[
+                {
+                  id: "5ece2c077e39da27658aaiyy5",
+                  name: "Meeting - Company ABC",
+                  isCompleted: true,
+                  date: "17 Jun",
+                  time: "9:45 AM",
+                },
+                {
+                  id: "5ece2c077e39da27658amkwj6",
+                  name: "SIT - Company ABC",
+                  isCompleted: false,
+                  date: "20 Jun",
+                  time: "3:30 PM",
+                },
+                {
+                  id: "5ece2c077e39da276589fneh",
+                  name: "UAT - Company ABC",
+                  isCompleted: false,
+                  date: "23 Jun",
+                  time: "11:00 AM",
+                },
+              ]}
+              sx={{ height: "100%" }}
+            />
+          </Grid>
+          <Grid xs={12} lg={4}>
+            <OverviewRecentActivities
+              activities={[
+                {
+                  id: "5ece2c077e39da276593ghgkdw",
+                  name: "Logged In",
+                  username: "Alice",
+                  time: "32 min ago",
+                  image: "/assets/avatars/avatar-anika-visser.png",
+                },
+                {
+                  id: "5ece2c077e39da2765960349kd",
+                  name: "Completed Task",
+                  username: "Cheshire",
+                  time: "46 min ago",
+                  image: "/assets/avatars/avatar-jie-yan-song.png",
+                },
+                {
+                  id: "5ece2c077e39da27659395ndr2",
+                  name: "Added Task",
+                  username: "Tarrant",
+                  time: "57 min ago",
+                  image: "/assets/avatars/avatar-fran-perez.png",
+                },
+                {
+                  id: "5ece2c077e39da2765997ydkg",
+                  name: "Logged Out",
+                  username: "Mary Ann",
+                  time: "57 min ago",
+                  image: "/assets/avatars/avatar-jane-rotanson.png",
+                },
+              ]}
+              sx={{ height: "100%" }}
+            />
           </Grid>
           <Grid xs={12} lg={8}>
             <OverviewSalesBar
