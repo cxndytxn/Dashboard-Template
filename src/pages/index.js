@@ -15,6 +15,9 @@ import { OverviewSalesLine } from "src/sections/overview/overview-sales-line";
 import { OverviewVideo } from "src/sections/overview/overview-video";
 import { OverviewTimeline } from "src/sections/overview/overview-timeline";
 import { OverviewRecentActivities } from "src/sections/overview/overview-recent-activities";
+import { OverviewRecentProjects } from "src/sections/overview/overview-recent-projects";
+import { OverviewSalesArea } from "src/sections/overview/overview-sales-area";
+import { OverviewTrafficRadialBar } from "src/sections/overview/overview-traffic-radial-bar";
 
 const now = new Date();
 
@@ -165,6 +168,38 @@ const Page = () => (
               sx={{ height: "100%" }}
             />
           </Grid>
+          <Grid xs={12} lg={8}>
+            <OverviewSalesArea
+              chartSeries={[
+                {
+                  name: "This year",
+                  data: [18, 16, 5, 8, 3, 14, 14, 16, 17, 19, 18, 20],
+                },
+                {
+                  name: "Last year",
+                  data: [12, 11, 4, 6, 2, 9, 9, 10, 11, 12, 13, 13],
+                },
+              ]}
+              sx={{ height: "100%" }}
+            />
+          </Grid>
+          <Grid xs={12} md={6} lg={4}>
+            <OverviewTrafficRadialBar
+              chartSeries={[63, 22, 15]}
+              labels={["Desktop", "Tablet", "Phone"]}
+              sx={{ height: "100%" }}
+            />
+          </Grid>
+          <Grid xs={12} lg={8}>
+            <OverviewRecentProjects
+              projects={[
+                {
+                  id: "",
+                },
+              ]}
+            />
+          </Grid>
+          <Grid xs={12} lg={4}></Grid>
           <Grid xs={12} md={6} lg={4}>
             <OverviewLatestProducts
               products={[
