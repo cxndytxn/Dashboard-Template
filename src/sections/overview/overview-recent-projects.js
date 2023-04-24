@@ -13,6 +13,7 @@ import {
   TableRow,
   SvgIcon,
   Avatar,
+  LinearProgress,
 } from "@mui/material";
 import { Scrollbar } from "src/components/scrollbar";
 import PropTypes from "prop-types";
@@ -32,10 +33,6 @@ export const OverviewRecentProjects = (props) => {
       anchorEl={menu}
       anchorOrigin={{
         vertical: "bottom",
-        horizontal: "center",
-      }}
-      transformOrigin={{
-        vertical: "top",
         horizontal: "right",
       }}
       open={Boolean(menu)}
@@ -79,20 +76,49 @@ export const OverviewRecentProjects = (props) => {
                 <TableCell>Client</TableCell>
                 <TableCell sortDirection="desc">Date</TableCell>
                 <TableCell>Members</TableCell>
-                <TableCell>Status</TableCell>
+                <TableCell>Progress</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {projects.map((project) => {
                 return (
-                  <TableRow hover key={project.id}>
+                  <TableRow hover key={project.id} sx={{ width: "100%" }}>
                     <TableCell>{project.name}</TableCell>
-                    <TableCell>
-                      <Avatar /> {project.client}
+                    <TableCell
+                      sx={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: 1,
+                      }}
+                    >
+                      {project.image ? <Avatar src={project.image} /> : <Avatar />} {project.client}
                     </TableCell>
                     <TableCell>{project.date}</TableCell>
-                    <TableCell>{project.members}</TableCell>
-                    <TableCell>{project.status}</TableCell>
+                    <TableCell
+                      sx={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        width: "100%",
+                      }}
+                    >
+                      {project.members ? (
+                        project.members.length > 1 ? (
+                          project.members.map((img) => {
+                            return <Avatar src={img} />;
+                          })
+                        ) : (
+                          <Avatar src={project.members} />
+                        )
+                      ) : (
+                        <Avatar />
+                      )}
+                    </TableCell>
+                    <TableCell>
+                      <Typography variant="subtitle1">{project.status}%</Typography>
+                      <LinearProgress variant="determinate" value={project.status} />
+                    </TableCell>
                   </TableRow>
                 );
               })}

@@ -194,7 +194,41 @@ const Page = () => (
             <OverviewRecentProjects
               projects={[
                 {
-                  id: "",
+                  id: "5ece2c077e39da2765959jfp",
+                  image: "/assets/logos/logo-dropbox.png",
+                  name: "Dropbox Project",
+                  client: "Dropbox",
+                  date: "16 Jun 2023 - 20 Dec 2023",
+                  members: [
+                    "/assets/avatars/avatar-fran-perez.png",
+                    "/assets/avatars/avatar-jane-rotanson.png",
+                    "/assets/avatars/avatar-jie-yan-song.png",
+                  ],
+                  status: 10,
+                },
+                {
+                  id: "5ece2c077e39da2765959jfp",
+                  image: "/assets/logos/logo-github.png",
+                  name: "Github Project",
+                  client: "Github",
+                  date: "23 Jan 2023 - 17 Nov 2023",
+                  members: [
+                    "/assets/avatars/avatar-iulia-albu.png",
+                    "/assets/avatars/avatar-anika-visser.png",
+                  ],
+                  status: 60,
+                },
+                {
+                  id: "5ece2c077e39da2765959jfp",
+                  image: "/assets/logos/logo-lyft.png",
+                  name: "Lyft Project",
+                  client: "Lyft",
+                  date: "10 Apr 2023 - 28 Jul 2023",
+                  members: [
+                    "/assets/avatars/avatar-neha-punita.png",
+                    "/assets/avatars/avatar-nasimiyu-danai.png",
+                  ],
+                  status: 30,
                 },
               ]}
             />
