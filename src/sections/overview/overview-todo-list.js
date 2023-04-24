@@ -27,13 +27,12 @@ export const OverviewTodoList = (props) => {
               sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
               key={todo.id}
             >
-              <Checkbox
-                color="primary"
-                disabled={todo.isDisabled}
-              />
+              <Checkbox color="primary" disabled={todo.isDisabled} />
               <Stack direction="column">
                 <Typography variant="subtitle1">{todo.title}</Typography>
-                <Typography variant="body2" color="grey">{todo.desc}</Typography>
+                <Typography variant="body2" color="grey">
+                  {todo.desc}
+                </Typography>
               </Stack>
             </ListItem>
           );
@@ -59,5 +58,6 @@ export const OverviewTodoList = (props) => {
 };
 
 OverviewTodoList.propTypes = {
+  todos: PropTypes.array.isRequired,
   sx: PropTypes.object,
 };

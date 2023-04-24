@@ -19,6 +19,7 @@ import { OverviewRecentProjects } from "src/sections/overview/overview-recent-pr
 import { OverviewSalesArea } from "src/sections/overview/overview-sales-area";
 import { OverviewTrafficRadialBar } from "src/sections/overview/overview-traffic-radial-bar";
 import { OverviewTodoList } from "src/sections/overview/overview-todo-list";
+import { OverviewAnalytics } from "src/sections/overview/overview-analytics";
 
 const now = new Date();
 
@@ -52,6 +53,33 @@ const Page = () => (
           </Grid>
           <Grid xs={12} sm={6} lg={3}>
             <OverviewTotalProfit sx={{ height: "100%" }} value="$15k" />
+          </Grid>
+          <Grid xs={12}>
+            <OverviewAnalytics
+              analytics={[
+                {
+                  id: "2042jfdkjfeikfmomfowowf",
+                  title: "Total Orders",
+                  subtitle: "Last year expenses",
+                  figure: 1896,
+                  color: "primary",
+                },
+                {
+                  id: "2042jfdkjfeikfm99jgldj",
+                  title: "Followers",
+                  subtitle: "People interested",
+                  figure: "45.9%",
+                  color: "secondary",
+                },
+                {
+                  id: "2042jfdkjfeksmsjfidkpo",
+                  title: "Clients",
+                  subtitle: "Total clients profit",
+                  figure: "$12.9k",
+                  color: "skyblue",
+                },
+              ]}
+            />
           </Grid>
           <Grid xs={12} sm={6} lg={4}>
             <OverviewVideo
