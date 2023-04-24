@@ -11,14 +11,18 @@ import {
   TableCell,
   TableHead,
   TableRow,
-  SvgIcon,
   Avatar,
   LinearProgress,
+  CardActions,
+  Divider,
+  SvgIcon,
+  Button,
 } from "@mui/material";
 import { Scrollbar } from "src/components/scrollbar";
 import PropTypes from "prop-types";
 import CheckIcon from "@heroicons/react/24/solid/CheckIcon";
 import EllipsisVerticalIcon from "@heroicons/react/24/solid/EllipsisVerticalIcon";
+import ArrowRightIcon from "@heroicons/react/24/solid/ArrowRightIcon";
 
 export const OverviewRecentProjects = (props) => {
   const { projects = [], sx } = props;
@@ -126,6 +130,21 @@ export const OverviewRecentProjects = (props) => {
           </Table>
         </Box>
       </Scrollbar>
+      <Divider />
+      <CardActions sx={{ justifyContent: "flex-end" }}>
+        <Button
+          color="inherit"
+          endIcon={
+            <SvgIcon fontSize="small">
+              <ArrowRightIcon />
+            </SvgIcon>
+          }
+          size="small"
+          variant="text"
+        >
+          View all
+        </Button>
+      </CardActions>
     </Card>
   );
 };

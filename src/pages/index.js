@@ -18,6 +18,7 @@ import { OverviewRecentActivities } from "src/sections/overview/overview-recent-
 import { OverviewRecentProjects } from "src/sections/overview/overview-recent-projects";
 import { OverviewSalesArea } from "src/sections/overview/overview-sales-area";
 import { OverviewTrafficRadialBar } from "src/sections/overview/overview-traffic-radial-bar";
+import { OverviewTodoList } from "src/sections/overview/overview-todo-list";
 
 const now = new Date();
 
@@ -198,7 +199,7 @@ const Page = () => (
                   image: "/assets/logos/logo-dropbox.png",
                   name: "Dropbox Project",
                   client: "Dropbox",
-                  date: "16 Jun 2023 - 20 Dec 2023",
+                  date: "16/06/2023 - 20/12/2023",
                   members: [
                     "/assets/avatars/avatar-fran-perez.png",
                     "/assets/avatars/avatar-jane-rotanson.png",
@@ -211,7 +212,7 @@ const Page = () => (
                   image: "/assets/logos/logo-github.png",
                   name: "Github Project",
                   client: "Github",
-                  date: "23 Jan 2023 - 17 Nov 2023",
+                  date: "23/01/2023 - 17/11/2023",
                   members: [
                     "/assets/avatars/avatar-iulia-albu.png",
                     "/assets/avatars/avatar-anika-visser.png",
@@ -223,7 +224,7 @@ const Page = () => (
                   image: "/assets/logos/logo-lyft.png",
                   name: "Lyft Project",
                   client: "Lyft",
-                  date: "10 Apr 2023 - 28 Jul 2023",
+                  date: "10/04/2023 - 28/07/2023",
                   members: [
                     "/assets/avatars/avatar-neha-punita.png",
                     "/assets/avatars/avatar-nasimiyu-danai.png",
@@ -233,7 +234,33 @@ const Page = () => (
               ]}
             />
           </Grid>
-          <Grid xs={12} lg={4}></Grid>
+          <Grid xs={12} lg={4}>
+            <OverviewTodoList
+              sx={{ height: "100%" }}
+              todos={[
+                {
+                  id: "5ece2c077e39d93044hfdkow",
+                  title: "Assign Members - Project ABC",
+                  desc: "Extra ReactJS developers needed",
+                },
+                {
+                  id: "5ece2c077e39d93044hfkfwk",
+                  title: "Meeting - Project ABC",
+                  desc: "Daily standup meeting",
+                },
+                {
+                  id: "5ece2c077e39d93044hdksla",
+                  title: "Proposal Presentation - Project XYZ",
+                  desc: "Bidding for Project XYZ",
+                },
+                {
+                  id: "5ece2c077e39d93044h04jma",
+                  title: "Meeting - Project XYZ",
+                  desc: "Project kickoff meeting",
+                },
+              ]}
+            />
+          </Grid>
           <Grid xs={12} md={6} lg={4}>
             <OverviewLatestProducts
               products={[
