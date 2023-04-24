@@ -61,7 +61,7 @@ const Page = () => (
                   id: "2042jfdkjfeikfmomfowowf",
                   title: "Total Orders",
                   subtitle: "Last year expenses",
-                  figure: 1896,
+                  figure: "1,896",
                   color: "primary",
                 },
                 {
@@ -69,14 +69,14 @@ const Page = () => (
                   title: "Followers",
                   subtitle: "People interested",
                   figure: "45.9%",
-                  color: "secondary",
+                  color: "skyblue",
                 },
                 {
                   id: "2042jfdkjfeksmsjfidkpo",
                   title: "Clients",
                   subtitle: "Total clients profit",
                   figure: "$12.9k",
-                  color: "skyblue",
+                  color: "orange",
                 },
               ]}
             />
